@@ -1,1 +1,18 @@
 @import './variables';
+
+.hero{
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .welcome {
+        left: 20px;
+        bottom: 20px;
+        padding: 0% 5%;
+        position: absolute;
+        background-color: rgba(72, 81, 42, 0.6);;
+        color: white;
+        font-size: 8pt;
+        font-family: 'Oswald', sans-serif
+    }
+}
