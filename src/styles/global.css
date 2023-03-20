@@ -21,10 +21,6 @@ header .header-mobile a img {
   height: 40px;
 }
 
-body {
-  background-color: red;
-}
-
 footer {
   position: sticky;
   bottom: 0;
@@ -40,4 +36,20 @@ footer .footer-mobile nav ul {
 }
 footer .footer-mobile nav ul li a img {
   height: 32px;
+
+.hero {
+  position: relative;
+}
+.hero img {
+  width: 100%;
+}
+.hero .welcome {
+  left: 20px;
+  bottom: 20px;
+  padding: 0% 5%;
+  position: absolute;
+  background-color: rgba(72, 81, 42, 0.6);
+  color: white;
+  font-size: 8pt;
+  font-family: "Oswald", sans-serif;
 }/*# sourceMappingURL=global.css.map */
