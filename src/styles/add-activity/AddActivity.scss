@@ -1,8 +1,17 @@
 @import '../../styles/variables';
 
+// General
+h2 {
+  margin: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: $mainColor;
+  font-weight: 300;
+}
+
 // Initial States
 .addActivity__confirmation {
-  display: none;
+  display: flex;
   width: 80%;
   margin: 0 auto;
   margin-top: 2rem;
@@ -26,6 +35,7 @@
     }
     button[type=button] {
       background-color: $fourthColor;
+      color: $beige;
     }
   }
 }
@@ -42,13 +52,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  h2 {
-    margin: 0;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: $mainColor;
-    font-weight: 300;
-  }
+
   form {
     font-weight: 300;
     margin: 0 auto;
