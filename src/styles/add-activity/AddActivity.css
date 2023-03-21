@@ -80,4 +80,10 @@ h2 {
   padding: 0.5rem 1rem;
   font-weight: 300;
   margin: auto;
+}
+
+.addActivity__success p {
+  text-align: center;
+  font-weight: 300;
+  font-style: italic;
 }/*# sourceMappingURL=AddActivity.css.map */

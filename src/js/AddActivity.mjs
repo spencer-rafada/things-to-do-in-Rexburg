@@ -41,7 +41,7 @@ export default class AddActivity {
   }
 
   handleSubmitButtonClicked() {
-    // location.href = 'success.html';
+    location.href = 'success.html';
     // document.querySelector(`#addActivity__confirmation__submitBtn`).disabled = true;
     // try {
     // } catch (error) {}
