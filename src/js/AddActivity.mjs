@@ -20,7 +20,6 @@ export default class AddActivity {
     // Store form data to local storage
     document.querySelector(`#addActivity__form__checkoutBtn`).addEventListener(`click`, (e) => {
       const formElement = document.forms[0];
-      console.log(formElement);
       const json = formDataToJSON(formElement);
       setLocalStorage(`addActivity`, json);
       this.handleCheckoutButtonClicked(e);
@@ -42,7 +41,10 @@ export default class AddActivity {
   }
 
   handleSubmitButtonClicked() {
-    location.href = 'success.html';
+    // location.href = 'success.html';
+    // document.querySelector(`#addActivity__confirmation__submitBtn`).disabled = true;
+    // try {
+    // } catch (error) {}
   }
 
   handleBackButton(e) {
@@ -52,7 +54,6 @@ export default class AddActivity {
     renderWithTemplate(this.renderForm(data), this.mainElement, 'afterbegin');
     document.querySelector(`#addActivity__form__checkoutBtn`).addEventListener(`click`, (e) => {
       const formElement = document.forms[0];
-      console.log(formElement);
       const json = formDataToJSON(formElement);
       setLocalStorage(`addActivity`, json);
       this.handleCheckoutButtonClicked(e);
