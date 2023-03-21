@@ -1,1 +1,84 @@
 @import '../../styles/variables';
+
+// Initial States
+.addActivity__confirmation {
+  display: none;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  .addActivity__confirmation__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    button {
+      background-color: $thirdColor;
+      border: 0;
+      padding: 0.5rem 1rem;
+      font-weight: 300;
+      margin: auto;
+    }
+    button[type=button] {
+      background-color: $fourthColor;
+    }
+  }
+}
+
+.addActivity__form {
+  // height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: $mainColor;
+    font-weight: 300;
+  }
+  form {
+    font-weight: 300;
+    margin: 0 auto;
+    width: 100%;
+    .addActivity__input {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      label {
+        margin-right: 0.25rem;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 0.2rem;
+        font-weight: 300;
+        border-radius: 0.25rem;
+        border: solid 1px black;
+      }
+    }
+    .addActivity__btn {
+      display: flex;
+      align-items: center;
+      button {
+        background-color: $thirdColor;
+        border: 0;
+        padding: 0.5rem 1rem;
+        font-weight: 300;
+        margin: auto;
+      }
+    }
+  }
+}
