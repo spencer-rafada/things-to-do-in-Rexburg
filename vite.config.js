@@ -11,6 +11,7 @@ export default defineConfig({
         favorites: resolve(__dirname, 'src/favorites/index.html'),
         'activity-details': resolve(__dirname, 'src/activity-details/index.html'),
         'add-activity': resolve(__dirname, 'src/add-activity/index.html'),
+        success: resolve(__dirname, 'src/add-activity/success.html.html'),
         activity: resolve(__dirname, 'src/activity/index.html'),
         admin: resolve(__dirname, 'src/admin/index.html'),
         developers: resolve(__dirname, 'src/developers/index.html'),
