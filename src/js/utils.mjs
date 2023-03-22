@@ -1,10 +1,19 @@
+// retrieve data from localstorage
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+// save data to local storage
+export function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
 const loadTemplate = async (path) => {
   const response = await fetch(path);
   const template = response.text();
   return template;
 };
 
-const renderWithTemplate = (template, parentElement, position, data, callback) => {
+export const renderWithTemplate = (template, parentElement, position, data, callback) => {
   parentElement.innerHTML = ``;
   parentElement.insertAdjacentHTML(position, template);
   if (callback) {
@@ -21,3 +30,21 @@ export const loadHeaderFooter = async () => {
   renderWithTemplate(header, headerElement, 'afterbegin');
   renderWithTemplate(footer, footerElement, 'afterbegin');
 };
+
+export function alertMessage(alertMessage, alertType, scroll = true) {
+  const alert = document.createElement(`div`);
+  alert.classList.add(`alert`);
+  alert.classList.add(`${alertType}`);
+  alert.innerHTML = `<p>${alertMessage}</p><span>X</span>`;
+
+  alert.addEventListener(`click`, (e) => {
+    if (e.target.tagName === 'SPAN') {
+      main.removeChild(alert);
+    }
+  });
+  const main = document.querySelector(`main`);
+  main.prepend(alert);
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
+}

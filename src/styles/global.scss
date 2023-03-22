@@ -1,5 +1,13 @@
 @import './variables';
 
+body {
+  font-family: Oswald, 'sans-serif';
+}
+
+main {
+  height: 100vh;
+}
+
 // This is the styling for header and footer
 header {
   position: sticky;
