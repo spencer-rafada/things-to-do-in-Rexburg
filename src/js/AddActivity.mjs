@@ -1,4 +1,4 @@
-import { renderWithTemplate, getLocalStorage, setLocalStorage } from './utils.mjs';
+import { renderWithTemplate, getLocalStorage, setLocalStorage, alertMessage } from './utils.mjs';
 
 const formDataToJSON = (formElement) => {
   const formData = new FormData(formElement),
@@ -44,7 +44,10 @@ export default class AddActivity {
     location.href = 'success.html';
     // document.querySelector(`#addActivity__confirmation__submitBtn`).disabled = true;
     // try {
-    // } catch (error) {}
+    // } catch (error) {
+    // redirect back to form
+    //   alertMessage(`Hello`, `error`);
+    // }
   }
 
   handleBackButton(e) {

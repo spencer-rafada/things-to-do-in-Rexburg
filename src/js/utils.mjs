@@ -30,3 +30,21 @@ export const loadHeaderFooter = async () => {
   renderWithTemplate(header, headerElement, 'afterbegin');
   renderWithTemplate(footer, footerElement, 'afterbegin');
 };
+
+export function alertMessage(alertMessage, alertType, scroll = true) {
+  const alert = document.createElement(`div`);
+  alert.classList.add(`alert`);
+  alert.classList.add(`${alertType}`);
+  alert.innerHTML = `<p>${alertMessage}</p><span>X</span>`;
+
+  alert.addEventListener(`click`, (e) => {
+    if (e.target.tagName === 'SPAN') {
+      main.removeChild(alert);
+    }
+  });
+  const main = document.querySelector(`main`);
+  main.prepend(alert);
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
+}
