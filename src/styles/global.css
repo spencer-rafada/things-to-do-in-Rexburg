@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");
 header {
   position: sticky;
   top: 0;
@@ -93,5 +93,5 @@ footer .footer-mobile nav ul li a img {
   background-color: rgba(72, 81, 42, 0.6);
   color: white;
   font-size: 8pt;
-  font-family: 'Oswald', sans-serif;
-} /*# sourceMappingURL=global.css.map */
+  font-family: "Oswald", sans-serif;
+}/*# sourceMappingURL=global.css.map */

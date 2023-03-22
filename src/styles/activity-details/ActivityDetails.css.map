@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../styles/_variables.scss"],"names":[],"mappings":"AAAQ,gHAAA","file":"ActivityDetails.css"}
+{"version":3,"sources":["../_variables.scss","ActivityDetails.scss","ActivityDetails.css"],"names":[],"mappings":"AAAQ,gHAAA;ACER;EACI,WAAA;ACAJ","file":"ActivityDetails.css"}
