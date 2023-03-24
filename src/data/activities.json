@@ -1,0 +1,22 @@
+{
+  "activities": [
+    {
+      "name": "Axe Throwing",
+      "location": "123 Rex",
+      "website": "www.axe.com",
+      "information": "Hello"
+    },
+    {
+      "name": "Sushi Go",
+      "location": "123 Sushi",
+      "website": "www.sushi.com",
+      "information": "Sushi!!"
+    },
+    {
+      "name": "Gym Shark",
+      "location": "123 Gym",
+      "website": "www.gym.com",
+      "information": "Gym!"
+    }
+  ]
+}

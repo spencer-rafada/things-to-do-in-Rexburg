@@ -48,3 +48,13 @@ export function alertMessage(alertMessage, alertType, scroll = true) {
     window.scrollTo(0, 0);
   }
 }
+
+// converting to json
+export async function convertToJson(res) {
+  const response = await res.json();
+  if (res.ok) {
+    return response;
+  } else {
+    throw { name: `servicesError`, message: response };
+  }
+}
