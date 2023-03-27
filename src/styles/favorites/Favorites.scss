@@ -14,16 +14,29 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding: 1rem;
     .favorites {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      margin-bottom: 1rem;
       .favoritesInfo {
         display: flex;
         justify-content: center;
         align-items: center;
+        div {
+          padding: 1rem;
+        }
+      }
+      .favoritesLike {
+        padding: 1rem;
+        img {
+          width: 32px;
+        }
       }
     }
   }

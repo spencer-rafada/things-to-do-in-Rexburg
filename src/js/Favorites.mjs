@@ -11,6 +11,14 @@ export default class Favorites {
   async init() {
     this.favorites = await externalServices.getActivity(); // Get Data using External Services
     this.renderList(this.favorites);
+
+    // Event Handlers
+    document.querySelectorAll(`.favoritesLike img`).forEach((item) => {
+      item.addEventListener(`click`, () => {
+        // TODO: Send a delete request for this.
+        console.log(item.dataset.id);
+      });
+    });
   }
 
   renderList(activities) {
@@ -23,7 +31,7 @@ export default class Favorites {
     <div class="favorites">
       <div class="favoritesInfo">
         <a href="${activity.website}">
-          <img src="" alt="${activity.title} Illustration" />
+          <img src="${activity.image}" alt="${activity.title} Illustration" />
         </a>
         <div>
           <h3>${activity.title}</h3>
@@ -31,7 +39,7 @@ export default class Favorites {
         </div>
       </div>
       <div class="favoritesLike">
-        <img src="../images/NavFavoritesFilled.png" alt="Like or Unlike the Activity" />
+        <img src="../images/NavFavoritesFilled.png" alt="Like or Unlike the Activity" data-id="${activity._id}"/>
       </div>
     </div>
     `;
