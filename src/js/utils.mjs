@@ -68,3 +68,11 @@ export async function convertToJson(res) {
     throw { name: `servicesError`, message: response };
   }
 }
+
+//get URL Parametrs
+export function getParam(param){
+  const findString = window.location.search;
+  const urlParam = new URLSearchParams(findString);
+  const activity = urlParam.get(param);
+  return activity;
+}
