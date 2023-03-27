@@ -1,5 +1,4 @@
 import ExternalServices from './ExternalServices.mjs';
-import { renderWithTemplate } from './utils.mjs';
 
 const externalServices = new ExternalServices();
 
@@ -11,7 +10,6 @@ export default class Favorites {
 
   async init() {
     this.favorites = await externalServices.getActivity(); // Get Data using External Services
-    console.log(this.favorites);
     this.renderList(this.favorites);
   }
 
@@ -24,17 +22,16 @@ export default class Favorites {
     return `
     <div class="favorites">
       <div class="favoritesInfo">
-        <a href="go to activity details">
-          <img src="" alt="${activity.name} Illustration" />
+        <a href="${activity.website}">
+          <img src="" alt="${activity.title} Illustration" />
         </a>
         <div>
-          <h3>${activity.name}</h3>
+          <h3>${activity.title}</h3>
           <p>${activity.location}</p>
-          <a href="${activity.website}">${activity.website}</a>
         </div>
       </div>
       <div class="favoritesLike">
-        <img src="" alt="Like or Unlike the Activity" />
+        <img src="../images/NavFavoritesFilled.png" alt="Like or Unlike the Activity" />
       </div>
     </div>
     `;

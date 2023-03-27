@@ -13,13 +13,16 @@ const loadTemplate = async (path) => {
   return template;
 };
 
-export const renderWithTemplate = (template, parentElement, position, data, callback) => {
+export const renderWithTemplate = (template, parentElement, position, callback, data) => {
   parentElement.innerHTML = ``;
   parentElement.insertAdjacentHTML(position, template);
   if (callback) {
     callback(data);
   }
 };
+
+import ExternalServices from './ExternalServices.mjs';
+const eService = new ExternalServices();
 
 export const loadHeaderFooter = async () => {
   const footer = await loadTemplate('../partials/footer.html');
@@ -29,6 +32,10 @@ export const loadHeaderFooter = async () => {
 
   renderWithTemplate(header, headerElement, 'afterbegin');
   renderWithTemplate(footer, footerElement, 'afterbegin');
+
+  document.querySelector(`#login`).addEventListener(`click`, () => {
+    eService.login();
+  });
 };
 
 export function alertMessage(alertMessage, alertType, scroll = true) {
