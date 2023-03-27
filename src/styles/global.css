@@ -94,4 +94,22 @@ footer .footer-mobile nav ul li a img {
   color: white;
   font-size: 8pt;
   font-family: "Oswald", sans-serif;
+}
+
+.featured h2 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.btn {
+  text-align: center;
+}
+.btn #addActivity {
+  text-align: center;
+  background-color: #DDA15E;
+  text-decoration: none;
+  color: black;
+  font-family: "Oswald", sans-serif;
+  padding: 3%;
+  margin: auto;
 }/*# sourceMappingURL=global.css.map */

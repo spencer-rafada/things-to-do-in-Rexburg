@@ -1,1 +1,57 @@
 @import '../../styles/variables';
+
+.myProfile{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: 'Oswald', sans-serif;
+    h1 {
+        text-align: center;
+        grid-column: 1/ span 2;
+    }
+    img{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: -5%;
+        grid-column: 1/2;
+        margin-top: 3%;
+    }
+    div{
+        #profile-name{
+            h2 {
+                margin-bottom: -5%;
+                font-size: 17pt;
+            }
+        }
+        button {
+            background-color: $thirdColor;
+            padding: 4%;
+            border: none;
+            
+        }
+        
+    }
+    
+}
+
+.profile-section{
+    .content{
+        font-family: 'Quattrocento';
+        margin: 15% 0;
+        ul{
+            list-style-type: none;
+            li {
+                margin: 5% 0;
+            }
+        }
+    }
+}
+
+.sign-out{
+    font-family: 'Oswald';
+    margin-left: 5%;
+    button {
+        background-color: $thirdColor;
+            padding: 3%;
+            border: none;
+    }
+}
