@@ -1,20 +1,40 @@
 import { renderWithTemplate, getLocalStorage, setLocalStorage, alertMessage } from './utils.mjs';
+import ExternalServices from './ExternalServices.mjs';
+
+const eServices = new ExternalServices();
 
 const formDataToJSON = (formElement) => {
   const formData = new FormData(formElement),
     convertedJSON = {};
 
   formData.forEach((value, key) => {
-    convertedJSON[key] = value;
+    if (key === 'image') {
+      convertToBase64();
+      convertedJSON[key] = { name: value.name, b64: '' };
+    } else {
+      convertedJSON[key] = value;
+    }
   });
 
   return convertedJSON;
 };
 
+const convertToBase64 = () => {
+  const fileInput = document.querySelector(`#image`);
+  const file = fileInput.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = () => {
+    var base64 = reader.result.split(',')[1];
+    setLocalStorage(`imgB64`, base64);
+  };
+  reader.readAsDataURL(file);
+};
+
 export default class AddActivity {
   constructor() {
     this.mainElement = document.querySelector(`main`);
-    this.emptyData = { name: '', location: '', website: '', information: '' };
+    this.emptyData = { title: '', location: '', website: '', info: '', category: '', image: '' };
 
     renderWithTemplate(this.renderForm(this.emptyData), this.mainElement, 'afterbegin');
     // Store form data to local storage
@@ -40,14 +60,24 @@ export default class AddActivity {
       .addEventListener(`click`, (e) => this.handleBackButton(e));
   }
 
-  handleSubmitButtonClicked() {
-    location.href = 'success.html';
-    // document.querySelector(`#addActivity__confirmation__submitBtn`).disabled = true;
-    // try {
-    // } catch (error) {
-    // redirect back to form
-    //   alertMessage(`Hello`, `error`);
-    // }
+  async handleSubmitButtonClicked() {
+    document.querySelector(`#addActivity__confirmation__submitBtn`).disabled = true;
+    try {
+      const body = getLocalStorage(`addActivity`);
+      body.image.b64 = getLocalStorage(`imgB64`) ? getLocalStorage(`imgB64`) : '';
+      console.log(body);
+      const response = await eServices.addActivity(body);
+      const data = await response.json();
+      console.log(data);
+      if (data.acknowledged === true) {
+        location.href = 'success.html';
+      } else {
+        throw new Error('Failed to Add');
+      }
+    } catch (error) {
+      document.querySelector(`#addActivity__confirmation__submitBtn`).disabled = false;
+      alertMessage(error, `error`);
+    }
   }
 
   handleBackButton(e) {
@@ -70,8 +100,8 @@ export default class AddActivity {
         <h2>Add Activity</h2>
         <form>
           <div class="addActivity__input">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="${data.name}"/>
+            <label for="title">Name:</label>
+            <input type="text" id="title" name="title" value="${data.title}" />
           </div>
           <div class="addActivity__input">
             <label for="location">Location:</label>
@@ -82,8 +112,28 @@ export default class AddActivity {
             <input type="url" id="website" name="website" value="${data.website}"/>
           </div>
           <div class="addActivity__input">
-            <label for="information">Information:</label>
-            <textarea id="information" name="information" value="${data.information}"></textarea>
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+              <option value="1">Outdoors</option>
+              <option value="2">Indoors</option>
+              <option value="3">Restaurant</option>
+              <option value="4">Groups</option>
+              <option value="5">Outside of Rexburg</option>
+              <option value="6">Games</option>
+              <option value="7">Sports</option>
+              <option value="8">Dessert</option>
+              <option value="9">Theater</option>
+              <option value="10">Shopping</option>
+              <option value="11">Seasonal</option>
+            </select>
+          </div>
+          <div class="addActivity__input">
+          <label for="info">Information:</label>
+          <textarea id="info" name="info" value="${data.info}"></textarea>
+          </div>
+          <div class="addActivity__input">
+          <label for="image">Select an image to upload:</label>
+          <input type="file" id="image" name="image">
           </div>
           <div class="addActivity__btn">
             <button type="submit" id="addActivity__form__checkoutBtn">Checkout</button>
@@ -98,10 +148,12 @@ export default class AddActivity {
     <section class="addActivity__confirmation">
     <h2>Confirmation</h2>
     <div class="addActivity__confirmation__info">
-      <p>Name: ${data.name}</p>
+      <p>Name: ${data.title}</p>
       <p>Location: ${data.location}</p>
       <p>Website: ${data.website}</p>
-      <p>Information: ${data.information}</p>
+      <p>Category: ${data.category}</p>
+      <p>Information: ${data.info}</p>
+      <p>Image: ${data.name}</p>
     </div>
     <div class="addActivity__confirmation__btns">
       <button type="button" id="addActivity__confirmation__backBtn">Back</button>

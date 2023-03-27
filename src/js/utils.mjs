@@ -35,7 +35,10 @@ export function alertMessage(alertMessage, alertType, scroll = true) {
   const alert = document.createElement(`div`);
   alert.classList.add(`alert`);
   alert.classList.add(`${alertType}`);
-  alert.innerHTML = `<p>${alertMessage}</p><span>X</span>`;
+  alert.innerHTML = `<p>${alertMessage}</p>`;
+  const spanClose = document.createElement(`span`);
+  spanClose.innerHTML = 'X';
+  alert.appendChild(spanClose);
 
   alert.addEventListener(`click`, (e) => {
     if (e.target.tagName === 'SPAN') {
