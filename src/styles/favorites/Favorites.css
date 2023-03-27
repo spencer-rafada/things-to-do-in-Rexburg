@@ -1,1 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap'); /*# sourceMappingURL=Favorites.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");
+.favoritesSection {
+  padding: 1rem;
+}
+.favoritesSection .favoritesSection__header {
+  text-align: center;
+}
+.favoritesSection .favoritesSection__header h1 {
+  font-weight: 300;
+  color: #48512A;
+}
+.favoritesSection .favoritesSection__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.favoritesSection .favoritesSection__list .favorites {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.favoritesSection .favoritesSection__list .favorites .favoritesInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=Favorites.css.map */

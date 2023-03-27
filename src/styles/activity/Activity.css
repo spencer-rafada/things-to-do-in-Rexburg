@@ -1,17 +1,1 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap'); /*# sourceMappingURL=Activity.css.map */
-
-.search-form{
-    margin: 12px;
-    text-align: center;
-}
-input{
-    width: 80%;
-    margin-top: 5px;
-}
-.search-btn{
-    background-color: #DDA15E;
-    border: 0;
-    width: auto;
-    padding: 3px ;
-    font-weight: 300;
-}

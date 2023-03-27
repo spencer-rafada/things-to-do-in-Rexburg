@@ -13,13 +13,16 @@ const loadTemplate = async (path) => {
   return template;
 };
 
-export const renderWithTemplate = (template, parentElement, position, data, callback) => {
+export const renderWithTemplate = (template, parentElement, position, callback, data) => {
   parentElement.innerHTML = ``;
   parentElement.insertAdjacentHTML(position, template);
   if (callback) {
     callback(data);
   }
 };
+
+import ExternalServices from './ExternalServices.mjs';
+const eService = new ExternalServices();
 
 export const loadHeaderFooter = async () => {
   const footer = await loadTemplate('../partials/footer.html');
@@ -29,13 +32,20 @@ export const loadHeaderFooter = async () => {
 
   renderWithTemplate(header, headerElement, 'afterbegin');
   renderWithTemplate(footer, footerElement, 'afterbegin');
+
+  document.querySelector(`#login`).addEventListener(`click`, () => {
+    eService.login();
+  });
 };
 
 export function alertMessage(alertMessage, alertType, scroll = true) {
   const alert = document.createElement(`div`);
   alert.classList.add(`alert`);
   alert.classList.add(`${alertType}`);
-  alert.innerHTML = `<p>${alertMessage}</p><span>X</span>`;
+  alert.innerHTML = `<p>${alertMessage}</p>`;
+  const spanClose = document.createElement(`span`);
+  spanClose.innerHTML = 'X';
+  alert.appendChild(spanClose);
 
   alert.addEventListener(`click`, (e) => {
     if (e.target.tagName === 'SPAN') {
@@ -46,5 +56,15 @@ export function alertMessage(alertMessage, alertType, scroll = true) {
   main.prepend(alert);
   if (scroll) {
     window.scrollTo(0, 0);
+  }
+}
+
+// converting to json
+export async function convertToJson(res) {
+  const response = await res.json();
+  if (res.ok) {
+    return response;
+  } else {
+    throw { name: `servicesError`, message: response };
   }
 }
