@@ -1,4 +1,5 @@
 import ExternalServices from './ExternalServices.mjs';
+import { alertMessage } from './utils.mjs';
 
 const externalServices = new ExternalServices();
 
@@ -14,9 +15,20 @@ export default class Favorites {
 
     // Event Handlers
     document.querySelectorAll(`.favoritesLike img`).forEach((item) => {
-      item.addEventListener(`click`, () => {
+      item.addEventListener(`click`, async () => {
         // TODO: Send a delete request for this.
-        console.log(item.dataset.id);
+        try {
+          const response = await externalServices.unlikeActivity(item.dataset.id);
+          if (response.status === 204) {
+            alertMessage('Successfully Unliked', 'success');
+            const parent = item.parentNode.parentNode;
+            parent.parentNode.removeChild(parent);
+          } else {
+            throw new Error('Failed to unlike activity.');
+          }
+        } catch (error) {
+          alertMessage(error, 'error');
+        }
       });
     });
   }

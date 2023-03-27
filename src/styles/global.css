@@ -119,4 +119,8 @@ footer .footer-mobile nav ul li a img {
 .alert.error {
   background-color: red;
   color: white;
+}
+
+.alert.success {
+  background-color: #DDA15E;
 }/*# sourceMappingURL=global.css.map */

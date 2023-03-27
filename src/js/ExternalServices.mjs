@@ -19,4 +19,11 @@ export default class ExternalServices {
   async login() {
     return await fetch(backend_url + 'login');
   }
+
+  async unlikeActivity(id) {
+    const requestOptions = {
+      method: 'DELETE'
+    };
+    return await fetch(backend_url + 'activity/' + id, requestOptions);
+  }
 }
