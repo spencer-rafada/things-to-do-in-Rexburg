@@ -1,9 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap');
+
+body {
+  font-family: Oswald, 'sans-serif';
+}
+
+main {
+  height: 100vh;
+}
+
 header {
   position: sticky;
   top: 0;
   background-color: white;
 }
+
 header .header-mobile {
   max-height: 80px;
   display: flex;
@@ -13,9 +23,11 @@ header .header-mobile {
   padding: 1rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.361);
 }
+
 header .header-mobile a {
   height: 100%;
 }
+
 header .header-mobile a img {
   width: 100%;
   height: 40px;
@@ -26,6 +38,7 @@ footer {
   bottom: 0;
   background-color: white;
 }
+
 footer .footer-mobile nav ul {
   padding: 0;
   padding: 1rem;
@@ -34,6 +47,7 @@ footer .footer-mobile nav ul {
   list-style: none;
   justify-content: space-between;
 }
+
 footer .footer-mobile nav ul li a img {
   height: 32px;
 }
@@ -41,6 +55,7 @@ footer .footer-mobile nav ul li a img {
 .hero {
   position: relative;
 }
+
 .hero ul,
 .hero li {
   list-style: none;
@@ -48,6 +63,7 @@ footer .footer-mobile nav ul li a img {
   margin: 0;
   padding: 0;
 }
+
 .hero .carousel {
   width: 100%;
   height: 100%;
@@ -56,27 +72,32 @@ footer .footer-mobile nav ul li a img {
   align-items: center;
   position: relative;
 }
+
 .hero .carousel_slider {
   width: 100%;
   height: 87%;
   overflow: hidden;
   position: relative;
 }
+
 .hero .content_inner_slider {
   width: 100%;
   height: 100%;
   display: flex;
 }
+
 .hero .img {
   min-width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 .hero .dots {
   display: flex;
   margin: 1rem 0;
 }
+
 .hero .dots .dot {
   width: 1rem;
   height: 1rem;
@@ -85,6 +106,7 @@ footer .footer-mobile nav ul li a img {
   margin: 0 5px;
   cursor: pointer;
 }
+
 .hero .welcome {
   left: 20px;
   bottom: 70px;
@@ -104,6 +126,7 @@ footer .footer-mobile nav ul li a img {
 .btn {
   text-align: center;
 }
+
 .btn #addActivity {
   text-align: center;
   background-color: #DDA15E;
@@ -112,4 +135,6 @@ footer .footer-mobile nav ul li a img {
   font-family: "Oswald", sans-serif;
   padding: 3%;
   margin: auto;
-}/*# sourceMappingURL=global.css.map */
+}
+
+/*# sourceMappingURL=global.css.map */
