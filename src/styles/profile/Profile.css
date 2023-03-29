@@ -1,1 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");/*# sourceMappingURL=Profile.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");
+.myProfile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Oswald", sans-serif;
+}
+.myProfile h1 {
+  text-align: center;
+  grid-column: 1/span 2;
+}
+.myProfile img {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: -5%;
+  grid-column: 1/2;
+  margin-top: 3%;
+}
+.myProfile div #profile-name h2 {
+  margin-bottom: -5%;
+  font-size: 17pt;
+}
+.myProfile div button {
+  background-color: #DDA15E;
+  padding: 4%;
+  border: none;
+}
+
+.profile-section .content {
+  font-family: "Quattrocento";
+  margin: 15% 0;
+}
+.profile-section .content ul {
+  list-style-type: none;
+}
+.profile-section .content ul li {
+  margin: 5% 0;
+}
+
+.sign-out {
+  font-family: "Oswald";
+  margin-left: 5%;
+}
+.sign-out button {
+  background-color: #DDA15E;
+  padding: 3%;
+  border: none;
+}/*# sourceMappingURL=Profile.css.map */
