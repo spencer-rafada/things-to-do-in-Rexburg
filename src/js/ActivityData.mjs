@@ -25,17 +25,12 @@ export default class Activity{
                 />
                 <h2 class="activity__name">${activity.title}</h2>
                 </a>
-                <button class="lookup-button" data-id="${activity.id}">Look Up</button>
+                <button onclick="location.href='../../activity-details/index.html?activity=${activity._id}'" class="lookup-button" >Look Up</button>
               </li>`;
       }
       renderActivity(activity) {
         const render = activity.map(this.activityCardTemplate);
         const elementActivity = document.getElementById("activity-list");
         elementActivity.insertAdjacentHTML("afterbegin", render.join(""));
-      }
-
-      async findActyvityById(Id){
-        const activities = await this.getActivity();
-        return activities.find((item)=>item.id === Id);
       }
 }
