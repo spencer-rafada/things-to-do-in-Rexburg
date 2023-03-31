@@ -16,6 +16,15 @@ export default class Activity{
         .then(convertToJson)
         .then((data)=>data);
     }
+    // searching for an activity and displaying the results
+     async searchActivity(key) {
+        const searchInstert = document.querySelector("#activity-list");
+        searchInstert.innerHTML = "";
+        const list = await this.getActivity();
+        const activities = list.filter(item => item.title.toLowerCase().includes(key.toLowerCase()));
+        const render = activities.map(this.activityCardTemplate);
+        searchInstert.insertAdjacentHTML("afterbegin", render.join(""));
+     }
     activityCardTemplate(activity) {
         return `<li class="activity-card">
                 <a href="${activity.website}">
