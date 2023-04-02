@@ -136,3 +136,23 @@ footer {
   background-color: red;
   color: white;
 }
+
+.featured{
+  h2{
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+.btn{
+  text-align: center;
+  #addActivity{
+    text-align: center;
+    background-color: $thirdColor;
+    text-decoration: none;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    padding: 3%;
+    margin: auto;
+  }
+}
