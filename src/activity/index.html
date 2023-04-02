@@ -21,10 +21,22 @@
   </head>
   <body>
     <header></header>
-    <body>
-      <a href="../activity-details/index.html">Activity</a>
-      <div>X</div>
-    </body>
+    <main>
+        <div class="act-search">
+          <form class="search-form" id="search-form">
+            <input
+              type="text"
+              name="query"
+              id="query"
+              placeholder="Search here"
+            />
+            <button type="submit" class="search-btn">Search</button>
+          </form>
+        </div>
+        <section class="activities">
+          <ul id="activity-list"></ul>
+        </section>
+    </main>
     <footer></footer>
   </body>
 </html>

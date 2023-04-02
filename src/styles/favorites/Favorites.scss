@@ -1,1 +1,30 @@
 @import '../../styles/variables';
+
+.favoritesSection {
+  padding: 1rem;
+  .favoritesSection__header {
+    text-align: center;
+    h1 {
+      font-weight: 300;
+      color: $mainColor;
+    }
+  }
+  .favoritesSection__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    .favorites {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .favoritesInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
