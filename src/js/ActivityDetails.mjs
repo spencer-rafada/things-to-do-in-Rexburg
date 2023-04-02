@@ -26,12 +26,16 @@ export default class ActivityDetails{
       activityDetailsRender(activity) {
         return `<div class="activity-details">
                 <a href="${activity.website}">
-                <img
-                  src="${activity.image}"
-                  alt="Image of ${activity.title} "
-                />
-                <h1 class="activity__name">${activity.title}</h1>
+                  <img
+                    src="${activity.image}"
+                    alt="Image of ${activity.title} "/>
                 </a>
+                <div class="name">
+                  <h1 class="activity__name">${activity.title}</h1>
+                  <div class="like-btn">
+                    <img src="../images/NavFavoritesFilled.png" alt="Like or Unlike the Activity" />
+                  </div>
+                </div>
                 <h2>Description: ${activity.info}</h2>
               </div>`;
       }
