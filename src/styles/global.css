@@ -30,8 +30,9 @@ header .header-mobile a img {
 }
 
 footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  width: 100%;
   background-color: white;
 }
 footer .footer-mobile nav ul {
