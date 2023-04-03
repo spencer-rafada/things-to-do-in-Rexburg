@@ -1,1 +1,46 @@
 @import '../../styles/variables';
+main{
+    margin-bottom: 680%;
+    .act-search{
+        text-align: center;
+        margin: 15%;
+        .search-form{
+            input{
+                width: 100%;
+                height: 30px;
+                border: 2px solid $mainColor;
+                color: $subColor;
+                padding: 1% 4%;
+            }
+            .search-btn{
+                background-color: $thirdColor;
+                padding: 3%;
+                border: none;
+                font-family: 'Oswald';
+                margin-top: 5%;
+            }
+        }
+    }
+    
+    .activities{
+        text-align: center;
+        margin-left: -10%;
+        #activity-list{
+            list-style-type: none;
+            .activity-card{
+                margin-bottom: 20%; 
+                a{
+                    text-decoration: none;
+                    h2{
+                        color: black;
+                    }
+                }
+                .lookup-button{
+                    background-color: $thirdColor;
+                    padding: 3%;
+                    border: none;
+                }
+            }
+        }
+    }
+}

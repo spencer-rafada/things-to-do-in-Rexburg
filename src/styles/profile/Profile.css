@@ -7,6 +7,8 @@
 .myProfile h1 {
   text-align: center;
   grid-column: 1/span 2;
+  margin-bottom: 10%;
+  margin-top: 10%;
 }
 .myProfile img {
   width: 80%;
@@ -39,6 +41,7 @@
 .sign-out {
   font-family: "Oswald";
   margin-left: 5%;
+  margin-bottom: 30%;
 }
 .sign-out button {
   background-color: #DDA15E;

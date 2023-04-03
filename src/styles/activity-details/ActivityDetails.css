@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");
-.placeholder {
-  width: 100%;
+main .activity-details {
+  margin: 15%;
+  text-align: center;
+}
+main .activity-details .name {
+  margin-top: 10%;
+  display: flex;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+main .activity-details .name .like-btn {
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=ActivityDetails.css.map */

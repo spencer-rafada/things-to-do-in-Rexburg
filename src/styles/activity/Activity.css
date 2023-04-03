@@ -1,1 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");/*# sourceMappingURL=Activity.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Quattrocento&display=swap");
+main {
+  margin-bottom: 680%;
+}
+main .act-search {
+  text-align: center;
+  margin: 15%;
+}
+main .act-search .search-form input {
+  width: 100%;
+  height: 30px;
+  border: 2px solid #48512A;
+  color: #606C38;
+  padding: 1% 4%;
+}
+main .act-search .search-form .search-btn {
+  background-color: #DDA15E;
+  padding: 3%;
+  border: none;
+  font-family: "Oswald";
+  margin-top: 5%;
+}
+main .activities {
+  text-align: center;
+  margin-left: -10%;
+}
+main .activities #activity-list {
+  list-style-type: none;
+}
+main .activities #activity-list .activity-card {
+  margin-bottom: 20%;
+}
+main .activities #activity-list .activity-card a {
+  text-decoration: none;
+}
+main .activities #activity-list .activity-card a h2 {
+  color: black;
+}
+main .activities #activity-list .activity-card .lookup-button {
+  background-color: #DDA15E;
+  padding: 3%;
+  border: none;
+}/*# sourceMappingURL=Activity.css.map */
